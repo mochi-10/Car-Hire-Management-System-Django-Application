@@ -1,0 +1,202 @@
+{% extends 'base.html' %}  
+
+{% block title %}Cars{% endblock title %}  
+
+{% load static %}  
+<link rel="stylesheet" href="{% static 'images/../static/style.css' %}">
+
+{% block body %}  
+<main role="main" style="background-color: rgb(200, 200, 200)">  
+    <section class="jumbotron text-center" style="background-color: rgb(200, 200, 200)">  
+        <div class="container">  
+            <h1 class="jumbotron-heading" style="font-size:50px">Welcome {{ request.user }} !!</h1>  
+            <p style="font-size:25px; margin-top:30px">Get wide varieties of cars at affordable prices!!</p>  
+        </div>  
+    </section>  
+
+    <div class="album py-5 bg-light" id="1">  
+        <div class="container" id="2">  
+            <div class="row" id="3">  
+                {% for i in car %}  
+                <div class="col-md-4">  
+                    <div class="card mb-4 shadow-sm">  
+                        <img src="/media/{{ i.image }}" alt="car" class="d-block w-100" height="225">  
+                        <div class="card-body">  
+                            <h4 style="text-align:center">{{ i.car_name }}</h4>  
+                            <p class="card-text">{{ i.car_desc }}</p>  
+                            <p id="{{ i.car_id }}">Price per Day: {{ i.price }}</p>  
+                            <div class="d-flex justify-content-between align-items-center" id="7">  
+                                <div class="btn-group" id="8">  
+                                    <a type="button" class="btn btn-sm btn-dark" href="/bill" id="rentbtn">RENT</a>  
+                                </div>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+                {% endfor %}  
+                
+                <!-- Static Sample Vehicles -->  
+                <div class="col-md-4">  
+                    <div class="card mb-4 shadow-sm">  
+                        <img src="{% static 'images/Toyota Camry.jpg' %}" alt="Car 1" class="d-block w-100" height="225">
+                        <div class="card-body">  
+                            <h4 style="text-align:center">Toyota Camry</h4>  
+                            <p class="card-text">Comfortable and reliable sedan.</p>  
+                            <p>Price per Day: \Ksh4000</p>  
+                            <div class="d-flex justify-content-between align-items-center" id="7">  
+                                <div class="btn-group" id="8">  
+                                    <a type="button" class="btn btn-sm btn-dark" href="/bill">RENT</a>  
+                                </div>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+
+                <div class="col-md-4">  
+                    <div class="card mb-4 shadow-sm">  
+                        <img src="{% static 'images/Ford Maustang.jpg' %}" alt="Car 2" class="d-block w-100" height="225">
+                        <div class="card-body">  
+                            <h4 style="text-align:center">Ford Mustang</h4>  
+                            <p class="card-text">Stylish and powerful sports car.</p>  
+                            <p>Price per Day: \ksh7000</p>  
+                            <div class="d-flex justify-content-between align-items-center" id="7">  
+                                <div class="btn-group" id="8">  
+                                    <a type="button" class="btn btn-sm btn-dark" href="/bill">RENT</a>  
+                                </div>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+
+                <div class="col-md-4">  
+                    <div class="card mb-4 shadow-sm">  
+                        <img src="{% static 'images/Honda Civic.jpg' %}" alt="Car 3" class="d-block w-100" height="225">
+                        <div class="card-body">  
+                            <h4 style="text-align:center">Honda Civic</h4>  
+                            <p class="card-text">Fuel-efficient compact car.</p>  
+                            <p>Price per Day: \ksh3500</p>  
+                            <div class="d-flex justify-content-between align-items-center" id="7">  
+                                <div class="btn-group" id="8">  
+                                    <a type="button" class="btn btn-sm btn-dark" href="/bill">RENT</a>  
+                                </div>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+
+                <div class="col-md-4">  
+                    <div class="card mb-4 shadow-sm">  
+                        <img src="{% static 'images/Chevrolet Tahoe.jpg' %}" alt="Car 4" class="d-block w-100" height="225">
+                        <div class="card-body">  
+                            <h4 style="text-align:center">Chevrolet Tahoe</h4>  
+                            <p class="card-text">Spacious SUV for family trips.</p>  
+                            <p>Price per Day: \ksh9000</p>  
+                            <div class="d-flex justify-content-between align-items-center" id="7">  
+                                <div class="btn-group" id="8">  
+                                    <a type="button" class="btn btn-sm btn-dark" href="/bill">RENT</a>  
+                                </div>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+
+                <div class="col-md-4">  
+                    <div class="card mb-4 shadow-sm">  
+                        <img src="{% static 'images/BMW 3 Series.jpg' %}" alt="Car 5" class="d-block w-100" height="225">
+                        <div class="card-body">  
+                            <h4 style="text-align:center">BMW 3 Series</h4>  
+                            <p class="card-text">Luxury sedan with performance.</p>  
+                            <p>Price per Day: \$100</p>  
+                            <div class="d-flex justify-content-between align-items-center" id="7">  
+                                <div class="btn-group" id="8">  
+                                    <a type="button" class="btn btn-sm btn-dark" href="/bill">RENT</a>  
+                                </div>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+
+                <div class="col-md-4">  
+                    <div class="card mb-4 shadow-sm">  
+                        <img src="{% static 'images/Subaru Outback.jpg' %}" alt="Car 6" class="d-block w-100" height="225">
+                        <div class="card-body">  
+                            <h4 style="text-align:center">Subaru Outback</h4>  
+                            <p class="card-text">Perfect for adventures and off-road.</p>  
+                            <p>Price per Day: \ksh6500</p>  
+                            <div class="d-flex justify-content-between align-items-center" id="7">  
+                                <div class="btn-group" id="8">  
+                                    <a type="button" class="btn btn-sm btn-dark" href="/bill">RENT</a>  
+                                </div>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+
+                <div class="col-md-4">  
+                    <div class="card mb-4 shadow-sm">  
+                        <img src="{% static 'images/Mazda CX-5.jpg' %}" alt="Car 7" class="d-block w-100" height="225">
+                        <div class="card-body">  
+                            <h4 style="text-align:center">Mazda CX-5</h4>  
+                            <p class="card-text">Compact SUV with great handling.</p>  
+                            <p>Price per Day: \ksh7500</p>  
+                            <div class="d-flex justify-content-between align-items-center" id="7">  
+                                <div class="btn-group" id="8">  
+                                    <a type="button" class="btn btn-sm btn-dark" href="/bill">RENT</a>  
+                                </div>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+
+                <div class="col-md-4">  
+                    <div class="card mb-4 shadow-sm">  
+                        <img src="{% static 'images/Nissan Altima.jpg' %}" alt="Car 8" class="d-block w-100" height="225">
+                        <div class="card-body">  
+                            <h4 style="text-align:center">Nissan Altima</h4>  
+                            <p class="card-text">Stylish and efficient sedan.</p>  
+                            <p>Price per Day: \ksh4400</p>  
+                            <div class="d-flex justify-content-between align-items-center" id="7">  
+                                <div class="btn-group" id="8">  
+                                    <a type="button" class="btn btn-sm btn-dark" href="/bill">RENT</a>  
+                                </div>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+
+                <div class="col-md-4">  
+                    <div class="card mb-4 shadow-sm">  
+                        <img src="{% static 'images/Kia Sorento.jpg' %}" alt="Car 9" class="d-block w-100" height="225">
+                        <div class="card-body">  
+                            <h4 style="text-align:center">Kia Sorento</h4>  
+                            <p class="card-text">Spacious and practical SUV.</p>  
+                            <p>Price per Day: \ksh8000</p>  
+                            <div class="d-flex justify-content-between align-items-center" id="7">  
+                                <div class="btn-group" id="8">  
+                                    <a type="button" class="btn btn-sm btn-dark" href="/bill">RENT</a>  
+                                </div>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+
+                <div class="col-md-4">  
+                    <div class="card mb-4 shadow-sm">  
+                        <img src="{% static 'images/Volkswagen Jetta.jpg' %}" alt="Car 10" class="d-block w-100" height="225">
+                        <div class="card-body">  
+                            <h4 style="text-align:center">Volkswagen Jetta</h4>  
+                            <p class="card-text">A reliable and fuel-efficient sedan.</p>  
+                            <p>Price per Day: \ksh4200</p>  
+                            <div class="d-flex justify-content-between align-items-center" id="7">  
+                                <div class="btn-group" id="8">  
+                                    <a type="button" class="btn btn-sm btn-dark" href="/bill">RENT</a>  
+                                </div>  
+                            </div>  
+                        </div>  
+                    </div>  
+                </div>  
+            </div> <!-- End of .row -->  
+        </div> <!-- End of .container -->  
+    </div> <!-- End of .album -->  
+</main>  
+{% endblock body %}                           
