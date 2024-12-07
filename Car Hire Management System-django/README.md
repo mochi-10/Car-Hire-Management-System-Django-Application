@@ -1,5 +1,5 @@
-# Car-Rental-System
-Car rental system using Django FrameWork.<br /> <br />
+# Car Hire management System-Django Application
+Car Hire management System using Django FrameWork.<br /> <br />
 User can login and rent a car and can download the bill generated.
 
 ## About Django : 
@@ -11,4 +11,4 @@ Django is an MVT web framework that is used to build web applications.Django has
 * Python 
 * SQLITE3 (Default database of django)
 ## Author :
-* Christy Biju (https://github.com/ChristyBiju)
+* Kipngetich Brian ((https://github.com/mochi-10))
